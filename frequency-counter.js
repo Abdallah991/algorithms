@@ -35,15 +35,18 @@ anagram = (word1, word2) => {
   //   loop over the letters and make sure they have the same frequency, if not return false
   // if all correct return true
 
-  for (i = 0; i < object1.length; i++) {
-    console.log(object1[i]);
-    console.log(object2[i]);
-    if ((object1[i] = object2[i])) {
+  for (i = 0; i < word1.length; i++) {
+    if (object1[word1[i]] == object2[word1[i]]) {
       // return false;
+      // console.log(object1[word1[i]] == object2[word1[i]]);
+    } else {
+      return false;
+      // console.log(object1[word1[i]] == object2[word1[i]]);
     }
   }
 
+  return true;
+
   // return true;
 };
-
-anagram("abdallah", "abdulla");
+console.log(anagram("abdallah", "abdallah"));
