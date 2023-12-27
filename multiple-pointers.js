@@ -4,25 +4,21 @@
 // if two consecutive values equal each other, dont change i but increment j.
 // if values at indexes j and i are different then set array(i) to equal array(j) and increase i before and j afeter
 
-countUniqueValues = (sortedArray) => {
+findUniqueValues = (sortedArray) => {
   // number of unique values in sorted array
   i = 0;
-  // j =1 to be able to compare at different indexes
-  for (j = 1; j < sortedArray.length; j++) {
-    // if the two adjecent elements are not equal
-    if (sortedArray[i] !== sortedArray[j]) {
-      // move i index and get the value
-      // the j index will increment with the loop
+  for (var j=1; j < sortedArray.length; j++){
+    // check if element at i doesnt equal element at index j
+    if (sortedArray[i] != sortedArray[j]) {
+      // increase the number of elements
       i++;
+      // add the element to the beginning of the array
       sortedArray[i] = sortedArray[j];
     }
   }
-  console.log("the i index is " + i);
-
-  console.log("the j index is " + j);
-
-  console.log(sortedArray);
-  return i + 1;
+  // return the unique array
+  // add i+1 so we accoun for the start from zero
+  return sortedArray.slice(0,i+1);
 };
 
-console.log(countUniqueValues([0, 1, 1, 3, 4]));
+console.log(findUniqueValues([0, 1, 1, 3, 4]));
