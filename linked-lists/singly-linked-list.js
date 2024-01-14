@@ -173,9 +173,9 @@ class singlyLinkedList {
     let next;
     let prev = null;
     for (let i = 0; i < this.length; i++) {
-      // set next to be the nodes next
+      // set next to be the node's next
       next = node.next;
-      // set node next to be previous
+      // set node's next to be previous
       node.next = prev;
       // previous equals to node
       prev = node;
