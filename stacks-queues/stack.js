@@ -9,7 +9,7 @@ class Stack {
   constructor() {
     this.first = null;
     this.last = null;
-    this.size = null;
+    this.size = 0;
   }
   // push a node to the stack
   push(val) {
