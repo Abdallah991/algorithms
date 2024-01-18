@@ -69,7 +69,6 @@ class BinarySearchTrees {
   }
 }
 
-// add values to the node
 var tree = new BinarySearchTrees();
 tree.insert(10);
 tree.insert(15);
