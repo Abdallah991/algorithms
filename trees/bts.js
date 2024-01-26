@@ -67,12 +67,72 @@ class BinarySearchTrees {
     findNode(this.root);
     return found;
   }
+
+  // * breadth first traversal
+  BFS() {
+    // declare data visited, queue searched and node variable
+    var data = [];
+    var queue = [];
+    var node = this.root;
+    // push node to the queue
+    queue.push(node);
+    // while queue not empty
+    while (queue.length) {
+      // remove node from start
+      node = queue.shift();
+      // push value node to visited
+      data.push(node.val);
+      // add left and right if exist to the queue
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+    // return all visited
+    return data;
+  }
+
+  // * pre order
+  DFSPreOrder() {
+    var data = [];
+    function traverse(node) {
+      data.push(node.val);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root);
+    return data;
+  }
+
+  // * post order
+  DFSPostOrder() {
+    var data = [];
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      data.push(node.val);
+    }
+    traverse(this.root);
+    return data;
+  }
+
+  // * in order
+  // returns the values of BST in order
+  DFSInOrder() {
+    var data = [];
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      data.push(node.val);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root);
+    return data;
+  }
 }
 
 var tree = new BinarySearchTrees();
 tree.insert(10);
 tree.insert(15);
 tree.insert(7);
+tree.insert(3);
 tree.insert(12);
 //
-console.log("value is ", tree.find(12));
+console.log("value is ", tree.DFSInOrder());
