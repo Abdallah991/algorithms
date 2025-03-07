@@ -13,7 +13,7 @@ class Queue {
   }
 
   // add to the end
-  // * similar to push in simgly linked list
+  // * similar to push in singly linked list
   enqueue(val) {
     let newNode = new Node(val);
     if (!this.first) {

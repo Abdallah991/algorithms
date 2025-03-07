@@ -189,5 +189,5 @@ var list = new singlyLinkedList();
 list.push("Hello");
 list.push("Goodbye");
 list.push("!");
-console.log(list.reverse());
 console.log(list);
+console.log(list.reverse());
